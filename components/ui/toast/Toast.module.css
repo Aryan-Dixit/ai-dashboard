@@ -8,7 +8,7 @@
   gap: var(--space-sm);
 
   z-index: 9999;
-  pointer-events: none; /* 🔥 IMPORTANT: no blocking UI */
+  pointer-events: none;
 }
 
 /* Base toast */
