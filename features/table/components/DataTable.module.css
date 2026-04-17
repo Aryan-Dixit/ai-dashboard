@@ -41,7 +41,6 @@
   border-top: 1px solid var(--color-neutral-200);
 }
 
-/* ✅ FIX: stronger alternate color */
 .table tbody tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.04);
 }
