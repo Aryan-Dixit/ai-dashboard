@@ -1,0 +1,23 @@
+[data-theme="dark"] {
+  /* NEUTRAL SCALE */
+  --color-neutral-50: #0b1220;
+  --color-neutral-100: #0f172a;
+  --color-neutral-200: #1e293b;
+  --color-neutral-300: #334155;
+
+  --color-neutral-800: #e2e8f0;
+  --color-neutral-900: #f8fafc;
+
+  /* SURFACE (FIXED CONTRAST) */
+  --color-surface-background: #0b1220;
+  --color-surface-card: #111827;
+  --color-surface-elevated: #1f2937;
+
+  /* TEXT */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5f5;
+  --color-text-disabled: #64748b;
+
+  /* PRIMARY */
+  --color-primary: #6366f1;
+}

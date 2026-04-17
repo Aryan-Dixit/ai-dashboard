@@ -1,0 +1,58 @@
+.card {
+  container-type: inline-size; /* 🔥 REQUIRED for container queries */
+
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+/* Hover */
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Icon */
+.icon {
+  font-size: 28px;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.title {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.value {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+}
+
+.changePositive {
+  color: var(--color-success);
+}
+
+.changeNegative {
+  color: var(--color-error);
+}
+
+/* 🔥 CONTAINER QUERY */
+@container (max-width: 300px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

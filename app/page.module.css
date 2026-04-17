@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+
+  /* ✅ SMART RESPONSIVE GRID */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
