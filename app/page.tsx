@@ -1,12 +1,24 @@
+import { headers } from 'next/headers'
 import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout'
 import { StatsCard } from '@/features/dashboard/components/StatsCard'
 import { DataTable } from '@/features/table/components/DataTable'
 import { Toasts } from '@/components/ui/toast/Toast'
 
 async function getStats() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, {
+  const headersList = headers()
+  const host = headersList.get('host')
+
+  const protocol =
+    process.env.NODE_ENV === 'development' ? 'http' : 'https'
+
+  const res = await fetch(`${protocol}://${host}/api/stats`, {
     cache: 'no-store',
   })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch stats')
+  }
+
   return res.json()
 }
 
@@ -20,10 +32,11 @@ export default async function HomePage({
     order?: string
   }
 }) {
-    const statsRes = await getStats()
+  const statsRes = await getStats()
 
   return (
     <DashboardLayout>
+      {/* Stats Grid */}
       <div
         style={{
           display: 'grid',
@@ -37,8 +50,10 @@ export default async function HomePage({
         ))}
       </div>
 
+      {/* CSS Toast System */}
       <Toasts />
 
+      {/* Data Table */}
       <DataTable searchParams={searchParams} />
     </DashboardLayout>
   )
