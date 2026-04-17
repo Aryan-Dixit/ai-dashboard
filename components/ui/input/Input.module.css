@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-/* Wrapper (important for border + focus) */
+/* Wrapper */
 .inputWrapper {
   position: relative;
   display: flex;
@@ -24,7 +24,7 @@
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.25);
 }
 
-/* Input field */
+/* Input */
 .input {
   width: 100%;
   padding: var(--space-sm) var(--space-md);
@@ -42,7 +42,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Label (floating) */
+/* Label */
 .label {
   position: absolute;
   left: var(--space-md);
@@ -58,7 +58,8 @@
   transition: var(--transition-base);
 }
 
-/* Active floating label */
+/* ✅ UPDATED: activate on focus OR value */
+.inputWrapper:focus-within .label,
 .labelActive {
   transform: translateY(-130%) scale(0.85);
   color: var(--color-primary);
@@ -82,12 +83,10 @@
   color: var(--color-error);
 }
 
-/* Error state */
 .errorWrapper {
   border-color: var(--color-error);
 }
 
-/* Disabled */
 .disabled {
   opacity: 0.6;
   cursor: not-allowed;
