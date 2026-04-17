@@ -7,7 +7,6 @@
   max-width: 300px;
 }
 
-/* ✅ FIX: vertical scroll required for sticky header */
 .tableContainer {
   overflow: auto;
   max-height: 400px; /* critical */
@@ -62,4 +61,30 @@
 
 .page {
   font-weight: 500;
+}
+
+/* Skeleton */
+.skeletonRow td {
+  padding: var(--space-sm);
+}
+
+.skeletonBox {
+  height: 12px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-200),
+    var(--color-neutral-300),
+    var(--color-neutral-200)
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
 }
