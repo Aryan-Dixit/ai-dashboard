@@ -1,5 +1,5 @@
 .card {
-  container-type: inline-size; /* 🔥 REQUIRED for container queries */
+  container-type: inline-size; /* REQUIRED for container queries */
 
   display: flex;
   gap: var(--space-md);
@@ -49,7 +49,7 @@
   color: var(--color-error);
 }
 
-/* 🔥 CONTAINER QUERY */
+/* CONTAINER QUERY */
 @container (max-width: 300px) {
   .card {
     flex-direction: column;
