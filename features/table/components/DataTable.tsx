@@ -118,8 +118,10 @@ export const DataTable = ({ searchParams }: Props) => {
           <tbody>
             {loading ? (
               Array.from({ length: 5 }).map((_, i) => (
-                <tr key={i}>
-                  <td colSpan={3}>Loading...</td>
+                <tr key={i} className={styles.skeletonRow}>
+                  <td><div className={styles.skeletonBox} /></td>
+                  <td><div className={styles.skeletonBox} /></td>
+                  <td><div className={styles.skeletonBox} /></td>
                 </tr>
               ))
             ) : data.length === 0 ? (
