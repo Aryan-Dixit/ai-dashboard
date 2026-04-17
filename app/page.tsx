@@ -5,7 +5,7 @@ import { DataTable } from '@/features/table/components/DataTable'
 import { Toasts } from '@/components/ui/toast/Toast'
 
 async function getStats() {
-  const headersList = headers()
+  const headersList = await headers() // ✅ FIX
   const host = headersList.get('host')
 
   const protocol =
