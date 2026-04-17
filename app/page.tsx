@@ -4,7 +4,7 @@ import { DataTable } from '@/features/table/components/DataTable'
 import { Toasts } from '@/components/ui/toast/Toast'
 
 async function getStats() {
-  const res = await fetch('http://localhost:3000/api/stats', {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, {
     cache: 'no-store',
   })
   return res.json()
